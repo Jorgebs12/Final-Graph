@@ -6,6 +6,7 @@ import { typeDefs } from "./gql/schema.ts";
 import { Query } from "./resolvers/Query.ts";
 import { Mutation } from "./resolvers/Mutation.ts";
 
+
 const MONGO_URL = Deno.env.get("MONGO_URL");
 
 if (!MONGO_URL) {
