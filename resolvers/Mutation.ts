@@ -8,14 +8,18 @@ export const Mutation = {
 
     addContact: async(parent_:unknown, args:{nombre: string, apellido: string, numTelefono: string}): Promise<ContactoModelType> =>{
         
-        const {nombre, apellido, numTelefono} = args;
-        const contacto = new ContactoModel({
-            nombre,
-            apellido,
-            numTelefono
-        });
+        const { nombre, apellido, numTelefono } = args;
+        const phoneDate = await validatePhone(numTelefono);
+        if (phoneDate.is_valid) {
+            const contacto = new ContactoModel({
+                nombre,
+                apellido,
+                numTelefono
+            });
             await contacto.save()
             return contacto;
+        }
+        else throw new GraphQLError('El teléfono no es válido')
     },
 
     deleteContact: async(parent_:unknown, args:{id: string}): Promise<ContactoModelType> =>{

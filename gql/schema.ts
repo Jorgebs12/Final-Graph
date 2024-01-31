@@ -6,6 +6,8 @@ type Contacto {
     nombre: String!,
     apellido: String!,
     numTelefono: String!,
+    capital: String!,
+    time: String!,
 }
 
 type Query {
