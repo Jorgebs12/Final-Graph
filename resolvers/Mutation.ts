@@ -3,13 +3,13 @@ import { ContactoModel, ContactoModelType } from "../db/Contacto.ts"
 import { GraphQLError } from "graphql"
 import { validatePhone } from "../controllers/validatePhone.ts"
 
-
 export const Mutation = {
 
     addContact: async(parent_:unknown, args:{nombre: string, apellido: string, numTelefono: string}): Promise<ContactoModelType> =>{
         
         const { nombre, apellido, numTelefono } = args;
         const phoneDate = await validatePhone(numTelefono);
+
         if (phoneDate.is_valid) {
             const contacto = new ContactoModel({
                 nombre,
@@ -48,6 +48,7 @@ export const Mutation = {
         });
 
         if(!contacto){
+            
             throw new GraphQLError("Contacto no encontrado");
         }
         return contacto;

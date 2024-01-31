@@ -12,6 +12,7 @@ export const Query = {
         try {
 
             const per = await ContactoModel.findById(args.id);
+            
             if (!per) {
                 throw new GraphQLError("Contacto no encontrado")
             }
@@ -39,6 +40,7 @@ export const Query = {
 
         try {
             const p = await ContactoModel.find();
+
             if (!p) {
                 throw new GraphQLError("No se ha encontrado ningun contacto")
             }
