@@ -8,7 +8,7 @@ type Contacto {
     numTelefono: String!,
     capital: String!,
     time: String!,
-}
+} 
 
 type Query {
 

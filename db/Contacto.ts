@@ -12,4 +12,4 @@ const ContactoSchema = new mongoose.Schema({
 
 
 export type ContactoModelType = Document & Omit<Contacto, "id">;
-export const ContactoModel = mongoose.model<ContactoModelType>("Contacto", ContactoSchema);
+export const ContactoModel = mongoose.model<ContactoModelType>("Contacto", ContactoSchema); 

@@ -16,4 +16,4 @@ export const getTime = async (city: string): Promise<string> =>{
     
     return `${data.hour}:${data.minute}:${data.second}`;
     
-};
+}; 

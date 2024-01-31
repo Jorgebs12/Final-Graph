@@ -2,7 +2,7 @@ import { Contacto } from "../types.ts";
 
 const apiKey = "CbmwFqPFOskF4+mJRHqIUQ==pv7Sz9vc428fBkK7";
 const options = {
-    method: "GET",
+    method: "GET", 
     headers: {
         "X-Api-Key": apiKey,
     },

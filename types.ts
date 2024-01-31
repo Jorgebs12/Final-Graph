@@ -3,4 +3,4 @@ export type Contacto = {
     nombre: string,
     apellido: string,
     numTelefono: string
-}
+};
